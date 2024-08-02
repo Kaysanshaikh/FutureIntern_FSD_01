@@ -1,0 +1,75 @@
+# Create an admin user
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+  "name": "Kaysan",
+  "password": "adminpassword",
+  "role": "admin"
+}
+
+###
+
+# Create a regular user
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+  "name": "KaysanShaikh",
+  "password": "userpassword"
+}
+
+###
+
+# Create a different regular user with the same credentials (name and password should be unique)
+POST http://localhost:4000/users
+Content-Type: application/json
+
+{
+  "name": "AnotherKaysanShaikh",
+  "password": "userpassword"
+}
+
+###
+
+# Log in as Regular User
+POST http://localhost:4000/users/login
+Content-Type: application/json
+
+{
+  "name": "KaysanShaikh",
+  "password": "userpassword"
+}
+
+###
+
+# Get hashed passwords as a regular user
+GET http://localhost:4000/hashes
+Content-Type: application/json
+
+###
+
+# Attempt to access the /admin route as a Regular User
+GET http://localhost:4000/admin
+
+###
+
+# Log in as Admin User
+POST http://localhost:4000/users/login
+Content-Type: application/json
+
+{
+  "name": "Kaysan",
+  "password": "adminpassword"
+}
+
+###
+
+# Access the /admin route as an Admin User
+GET http://localhost:4000/admin
+
+###
+
+# Get hashed passwords (for admin users only)
+GET http://localhost:4000/hashes
+Content-Type: application/json
