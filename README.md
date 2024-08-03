@@ -21,5 +21,5 @@ Install dependencies: npm install
 Start the server: npm start or npm run devStart
 For detailed usage instructions and testing examples, please refer to the request.rest file included in the repository.
 
-This description provides a comprehensive overview of my project, highlighting its features and setup instructions.
+This description provides a comprehensive overview of my project, for more detailed information read the documentation.pdf file from respository.
 Feel free to explore, contribute, and provide feedback!
